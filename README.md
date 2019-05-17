@@ -83,3 +83,27 @@ They also contain an optional Text element to display text overlayed on the butt
 Events such as button clicks are handled by the EventSystem generated automatically on creation of first UI element
 
 Ecah button has a OnClick field which invokes a list of funcitons on button click. The first arg is the GameObject. OnClick can then call any function associated with the components of this gameobject. For a functipon to be eligible for invoing it has to have a public access specifier, void return type and take no args or float, int, Object, string, bool
+## Images
+Other than being stand alone graphics they are also used as backgrounds for other UI elements
+
+Components
+1. Source Image : The sprite to be displayed
+2. Color Multiplier : USed for tinting or fading of color
+3. Optional Material to use shadows. textures are ignored. To create an UI material, create a simple material then set shader to uGUI element
+4. Image type :
+    
+    1. Simple 
+      
+        * Preserve Aspect : Image will be as large as it can be while maintaining aspect ratio
+
+        * Set Native Size : Set to original size
+    2. Slice
+        * Display the image as a 9Slice sprite which is seprated in 9 sectioned grid pattern. 
+        * Only the center grid section stretches allowing scaling without distortion of edges
+        * Fill center determines whether the center section of such a sprite will be shown or not. 
+    3. Tiled
+        * Tiles (repeats) the images
+    4. Filled
+        * Using Fill Amount determine what portion of the image is to be shown (1 : Fully shown, 0 : not shown)
+        * Fill Method and Fill Origin determine which point represents Fill amount as zero and in which direction the image will fill as it increases
+        * Fill Methods can be Horizontal/Vertical/Radial. For Radial methods we can define the radial angle to start fill from. Also we can determine if fill be clockwise or not.
