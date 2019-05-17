@@ -62,3 +62,24 @@ There two edit modes for the Rect Transform :
 2. Raw mode: Changing the RT pivot or anchors actually changes the UI element position
 
 If the elements are goruped under layouts there RT will be controlled by those Layouts and thus be inaccessible directly
+
+## Button
+Create a button just use Create > UI > Button
+
+It requires two scripts:
+1. Button Script
+    
+    * Interactable : Whether the button will respond to press.
+    * Button has three transitions : Normal, highlighted and pressed
+    * All these transitions are represented by color tint, sprites or animations
+    * The target image refers automatically to the Image component of the button if added. 
+    * Animated transitions wiill require Animators which can be assigned or automatically generated.
+2. Image Script  
+    
+    * This is used to set the image target to be displaye over the button
+
+They also contain an optional Text element to display text overlayed on the button
+
+Events such as button clicks are handled by the EventSystem generated automatically on creation of first UI element
+
+Ecah button has a OnClick field which invokes a list of funcitons on button click. The first arg is the GameObject. OnClick can then call any function associated with the components of this gameobject. For a functipon to be eligible for invoing it has to have a public access specifier, void return type and take no args or float, int, Object, string, bool
