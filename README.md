@@ -34,3 +34,31 @@ Canvas has 3 possible render modes
     * Sorting layer and ordering layer determines the rendering order of the canvas as compared to other elements in the scene
 
 Elements in a canvas are rendered in a top down order.
+## Rect Transform
+Rect Transform represents the transform parameters of a 2D rectangle of certain width set over a pivotal point which allows rendering in the scene volume as a flat 3D object   
+
+Anchoring in UI allows an UI component to be attached to a parent element if it also happens to have a Rect Transform component and transform on the basis of the parent UI
+
+To manipulate the rect transform component we use the rect tool using the shortcut T. With shift key pressed down the UI component resizes proportionally
+
+Rotation takes place relative to the pivot point which can also be shifted as needed even if outside the UI element
+
+Position fields in the rect transform shows distance in pixels from the anchor point to the pivot
+
+The anchor points represents the 4 corners of the parent element. Thier min and max values are percentages of the parent dimensions.
+
+If the dimensions of parent element are changes, the anchor and the UI element with it will adjust to a relative position.
+
+If all the anchor points are joined together the UI element will remain same and not stretch as that entirely depends on the distance of its corner to the anchor points which in this case remains constant. But if the anchor points are seperated then the UI element wil resize along with the parent relative to the anchors.
+
+* If the anchor points are set to the childs corner it will stretch similarly to the parent.
+* Positioning the anchors to the corners of the parent will fix the borders of the child
+* if the anchors are set on an edge of the parent then the UI element will stretch only across that edge. It will snap back to 
+
+Scaling of UI element leads to full resize and should be primarily used for animations alone 
+
+There two edit modes for the Rect Transform :
+1. Blueprint mode : Treats the RT as if it is not rotates or scaled. Also changing the anchor and pivot values in this mode will let the UI at the same positions
+2. Raw mode: Changing the RT pivot or anchors actually changes the UI element position
+
+If the elements are goruped under layouts there RT will be controlled by those Layouts and thus be inaccessible directly
