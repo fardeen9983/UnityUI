@@ -122,3 +122,13 @@ Best Fit ignores these settings making it as large as required
 Min and max size refer to limits on font size
 
 Text Markups let us the usage of markup language like HTML
+## UI Events and triggers
+Creatig UI elements also creates an EventSystem GameObject which may have multiple input components and event system component. The actual event system looks up this EventSystem gameobject to determine which UI element reacts to an event in what manner
+
+First selected property lets us the define which UI element will be selcted first on rendering so as to automatically select it.
+
+Then there are input modules for standard devices like keyboard, mouse, joystick, etc and then we have touch input module.
+
+Input Action per seconds defines the number of inputs the standard input module can handle. it introduces delays between input acceptance. The last option for Allow Activation on Mobile Device allows input from peripherals connected via a mobile device.
+
+To add custom events to UI elements we can add the EventTrigger component and then add lists of fucntions to be invoked on desired events.
