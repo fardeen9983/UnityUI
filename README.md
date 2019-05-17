@@ -132,3 +132,26 @@ Then there are input modules for standard devices like keyboard, mouse, joystick
 Input Action per seconds defines the number of inputs the standard input module can handle. it introduces delays between input acceptance. The last option for Allow Activation on Mobile Device allows input from peripherals connected via a mobile device.
 
 To add custom events to UI elements we can add the EventTrigger component and then add lists of fucntions to be invoked on desired events.
+## Slider
+Slider is a UI component allowing users to select numeric values from a predefined range.
+
+Child Components:
+
+* Background Graphic (optional)
+* Fill graphic : represents the relative value chosen
+* Handle (optional) : the image to be shown at the chosen value
+
+Attributes of main component : 
+
+* Direction
+* Min/max values
+* Whole numbers 
+* Transition states
+
+Change in slider value events can be handled by public void functions with one float arg.
+
+Scripted Sliver value
+```c#
+Slider slider; //Initialize it
+slider.value = Math.MoveTowards(slider.value,100f,0.15f);
+```
