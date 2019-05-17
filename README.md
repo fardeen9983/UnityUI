@@ -107,3 +107,18 @@ Components
         * Using Fill Amount determine what portion of the image is to be shown (1 : Fully shown, 0 : not shown)
         * Fill Method and Fill Origin determine which point represents Fill amount as zero and in which direction the image will fill as it increases
         * Fill Methods can be Horizontal/Vertical/Radial. For Radial methods we can define the radial angle to start fill from. Also we can determine if fill be clockwise or not.
+## Text
+Text component is used to render Text on the UI layout  
+Components :
+
+Text : Holds the textual info to be displayed on the UI
+
+Other components includeFont alignment, style, Line spacing, color, material.
+
+Oversized text wont be displayed until horizontal/vertical overflow are set to overflow. Truncate will cut overflowing text
+
+Best Fit ignores these settings making it as large as required
+
+Min and max size refer to limits on font size
+
+Text Markups let us the usage of markup language like HTML
