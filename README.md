@@ -155,3 +155,27 @@ Scripted Sliver value
 Slider slider; //Initialize it
 slider.value = Math.MoveTowards(slider.value,100f,0.15f);
 ```
+## Scroll Rect 
+It allows the movement of UI lement across the two differrent axeses. Usually coupled together with a mask element
+
+Scroll Rect is a script to be added to the gameobect in the UI canvas through Add Component > UI > ScrollView 
+
+To specify what is to be made scrollable add that element to the Content component 
+
+To add masks to the content first create add an image component, next add a mask script with the image as input
+
+Movement type :
+1. Unrestricted : Not commonly used
+2. Elastic : Content bounces on reaching bounds of the scroll rect. The bounce is set up by the elaticity property
+3. Clamped : No bounce simple stop motion. INertia defines if the content will continue to drag after release of pointer. The stopping time is determined by the stopping property
+
+For the Elastic and Clamped mode the rect transform dimension of content needs to be greater than that of that of the Scroll rect otherwise that dimension will not be scrollable. Also the content should always be placed inside the bounds of the scroll view otherwise unexpected results may take place.
+
+We can display the horizontal and vertical scroll bar by first placing them at appropriate UI position and then settting them as the scrollbars of the scroll view
+
+## Scrollbar
+Like the slider they allow user to select a numeric value by dragging the handle between values 0 to 1 though. Mostly used with scroll rect  to control scrolling of content
+
+Scrollbar contains a family of game objects namely Sliding area > Handle
+
+It has an image background
